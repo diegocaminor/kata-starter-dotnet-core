@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace Kata
 {
     public class Calculator
@@ -9,16 +11,8 @@ namespace Kata
                 return 0;                
             }
 
-            var res = numbers.Split(",");
-            if (res.Length > 1)
-            {
-                return int.Parse(res[0]) + int.Parse(res[1]);
-
-            }
-            else
-            {
-                return int.Parse(numbers);
-            }
+            var res = numbers.Split(",").Select(int.Parse);
+            return res.Sum();
         }
     }
 }
