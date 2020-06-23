@@ -11,6 +11,7 @@ namespace Kata
                 return 0;                
             }
 
+            numbers = numbers.Replace("\n", ",");
             var res = numbers.Split(",").Select(int.Parse);
             return res.Sum();
         }
